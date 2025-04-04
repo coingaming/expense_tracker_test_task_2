@@ -16,7 +16,9 @@ defmodule ExpenseTracker.Application do
       # Start a worker by calling: ExpenseTracker.Worker.start_link(arg)
       # {ExpenseTracker.Worker, arg},
       # Start to serve requests, typically the last entry
-      ExpenseTrackerWeb.Endpoint
+      ExpenseTrackerWeb.Endpoint,
+      {ExpenseTracker.Users.UserServer, []},
+      {ExpenseTracker.Expenses.ExpenseServer, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
