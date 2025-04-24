@@ -18,6 +18,24 @@ defmodule ExpenseTrackerWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    post "/users/log_in", UserSessionController, :create
+    delete "/users/log_out", UserSessionController, :delete
+
+    live_session :redirect_if_user_is_authenticated,
+      on_mount: [{ExpenseTrackerWeb.UserAuth, :redirect_if_user_is_authenticated}] do
+      live "/users/register", UserRegistrationLive, :new
+      live "/users/log_in", UserLoginLive, :new
+    end
+  end
+
+  ## Authentication routes
+  scope "/", ExpenseTrackerWeb do
+    pipe_through [:browser]
+
+    live_session :require_authenticated_user,
+      on_mount: [{ExpenseTrackerWeb.UserAuth, :ensure_authenticated}] do
+      live "/dashboard", DashboardLive, :new
+    end
   end
 
   # Other scopes may use custom stacks.
