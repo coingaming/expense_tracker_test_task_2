@@ -6,17 +6,11 @@ defmodule ExpenseTracker.Users do
   alias ExpenseTracker.Users.Registration
   alias ExpenseTracker.Users.UserServer
 
-  def add_user(username) do
-    UserServer.add_user(username)
-  end
+  def add_user(username), do: UserServer.add_user(username)
 
-  def find_user(username) do
-    UserServer.find_user(username)
-  end
+  def find_user(username), do: UserServer.find_user(username)
 
-  def clean_users do
-    UserServer.clean()
-  end
+  def clean_users, do: UserServer.clean()
 
   def change_registration(%Registration{} = registration, attrs \\ %{}) do
     registration
