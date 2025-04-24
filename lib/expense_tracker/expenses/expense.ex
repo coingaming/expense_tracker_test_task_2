@@ -1,4 +1,4 @@
-defmodule YoloPenny.Expenses.Expense do
+defmodule ExpenseTracker.Expenses.Expense do
   @moduledoc """
   The schema for the expense registration form.
   """

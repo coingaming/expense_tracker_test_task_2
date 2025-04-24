@@ -1,7 +1,7 @@
-defmodule ExpenseServer.Expenses.ExpenseServerTest do
+defmodule ExpenseTracker.Expenses.ExpenseServerTest do
   use ExUnit.Case
 
-  alias ExpenseServer.Expenses.ExpenseServer
+  alias ExpenseTracker.Expenses.ExpenseServer
 
   setup do
     ExpenseServer.clean()

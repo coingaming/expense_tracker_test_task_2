@@ -1,11 +1,11 @@
-defmodule YoloPenny.Expenses.ExpenseServer do
+defmodule ExpenseTracker.Expenses.ExpenseServer do
   @moduledoc """
   This module provides a GenServer for managing user's expenses.
   """
 
   import Ecto.UUID, only: [generate: 0]
 
-  alias YoloPennyWeb.Endpoint
+  alias ExpenseTrackerWeb.Endpoint
 
   use GenServer
 
